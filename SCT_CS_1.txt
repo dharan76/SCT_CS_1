@@ -1,0 +1,11 @@
+# 🔐 Caesar Cipher
+
+A simple Python program to **encrypt** or **decrypt** messages using the Caesar Cipher algorithm.
+
+## 💡 How to Use
+1. Run the script.
+2. Enter your message.
+3. Enter a shift value (e.g., `3`).
+4. Choose mode: `encrypt` or `decrypt`.
+
+

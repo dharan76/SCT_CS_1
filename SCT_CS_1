@@ -1,0 +1,29 @@
+def caesar_cipher(text, shift, mode):
+    result = ""
+    # Ensure the shift is within the range of 0-25
+    shift = shift % 26
+    for char in text:
+        if char.isalpha():
+            base = ord('A') if char.isupper() else ord('a')
+            if mode == "encrypt":
+                result += chr((ord(char) - base + shift) % 26 + base)
+            elif mode == "decrypt":
+                result += chr((ord(char) - base - shift) % 26 + base)
+            else:
+                raise ValueError("Mode must be 'encrypt' or 'decrypt'")
+        else:
+            result += char
+    return result
+
+# Get user input
+message = input("Enter your message: ")
+shift = int(input("Enter shift value (e.g., 3): "))
+mode = input("Type 'encrypt' or 'decrypt': ").lower()
+
+# Validate mode input
+if mode not in ["encrypt", "decrypt"]:
+    print("Invalid mode. Please type 'encrypt' or 'decrypt'.")
+else:
+    # Show result
+    output = caesar_cipher(message, shift, mode)
+    print(f"Result: {output}")
